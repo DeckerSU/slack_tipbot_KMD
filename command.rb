@@ -19,7 +19,11 @@ class Command
 
   def perform
     if ACTIONS.include?(@action)
-      self.send("#{@action}".to_sym)
+   #   self.send("#{@action}".to_sym)
+   @result[:text] = "I was the first version of a tipbot on this Slack channel but I'm retired.\n";
+   @result[:text] += "Use my new friend @dashtipper (mark the *@*) for you tips.\n ";
+   @result[:text] += "A good start is _@dashtipper help_ to see the commands.";
+   
     else
       raise @coin_config_module::PERFORM_ERROR
     end
